@@ -1,0 +1,76 @@
+2025-04-04 16:49:42 INFO            _                _                      
+2025-04-04 16:49:42 INFO           / \   ___ ___ ___| | ___ _ __ __ _ _   _ 
+2025-04-04 16:49:42 INFO          / _ \ / __/ __/ _ \ |/ _ \ '__/ _` | | | |
+2025-04-04 16:49:42 INFO         / ___ \ (_| (_|  __/ |  __/ | | (_| | |_| |
+2025-04-04 16:49:42 INFO        /_/   \_\___\___\___|_|\___|_|  \__, |\__, |
+2025-04-04 16:49:42 INFO                                        |___/ |___/ 
+2025-04-04 16:49:42 INFO        generating outputs according to the following specified output flags... 
+2025-04-04 16:49:42 INFO         Please use the -f flag to update the preference (default to all output files)
+2025-04-04 16:49:42 INFO        {'ERT': 1, 'ERT_summary': 1, 'ART': 1, 'ART_summary': 1, 'energy_estimation': 1, 'flattened_arch': 1}
+2025-04-04 16:49:42 INFO        Located config file at /home/kang222/.config/accelergy/accelergy_config.yaml.
+2025-04-04 16:49:42 INFO        config file located:
+2025-04-04 16:49:42 INFO        /home/kang222/.config/accelergy/accelergy_config.yaml
+2025-04-04 16:49:42 INFO        Parsing file /home/workspace/timeloop-accelergy-exercises/workspace/tutorial_exercises/01_accelergy_timeloop_2020_ispass/timeloop/00-model-conv1d-1level/output/parsed-processed-input.yaml for architecture info
+2025-04-04 16:49:42 INFO        Parsing file /home/workspace/timeloop-accelergy-exercises/workspace/tutorial_exercises/01_accelergy_timeloop_2020_ispass/timeloop/00-model-conv1d-1level/output/parsed-processed-input.yaml for compound_components info
+2025-04-04 16:49:42 WARNING     No compound component classes specified, architecture can only contain primitive components
+2025-04-04 16:49:42 INFO        Adding required action "read" to class regfile
+2025-04-04 16:49:42 INFO        Adding required action "update" to class regfile
+2025-04-04 16:49:42 INFO        Adding required action "leak" to class regfile
+2025-04-04 16:49:42 INFO        Adding required action "write" to class regfile
+2025-04-04 16:49:42 INFO        Adding required action "compute" to class intmac
+2025-04-04 16:49:42 INFO        Estimator plug-in identified by: /usr/local/share/accelergy/estimation_plug_ins/accelergy-adc-plug-in/adc.estimator.yaml
+2025-04-04 16:49:42 INFO        Estimator plug-in identified by: /usr/local/share/accelergy/estimation_plug_ins/accelergy-aladdin-plug-in/aladdin.estimator.yaml
+2025-04-04 16:49:42 INFO        Estimator plug-in identified by: /usr/local/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti.estimator.yaml
+2025-04-04 16:49:42 INFO        Estimator plug-in identified by: /usr/local/share/accelergy/estimation_plug_ins/accelergy-library-plugin/library.estimator.yaml
+2025-04-04 16:49:42 INFO        Estimator plug-in identified by: /usr/local/share/accelergy/estimation_plug_ins/accelergy-table-based-plug-ins/table.estimator.yaml
+2025-04-04 16:49:42 INFO        Estimator plug-in identified by: /usr/local/share/accelergy/estimation_plug_ins/dummy_tables/dummy.estimator.yaml
+2025-04-04 16:49:42 INFO        Loading Python plug-in: /usr/local/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_wrapper.py. Errors below are likely due to plug-in, not Accelergy.
+2025-04-04 16:49:42 INFO        Getting all estimators in module <module 'python_plug_in' from '/usr/local/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_wrapper.py'>
+2025-04-04 16:49:42 INFO        Added estimator CactiCache that estimates cache with actions idle, read, read_access, update, update_access, write, write_access, leak
+2025-04-04 16:49:42 INFO        Added estimator CactiDRAM that estimates ['DRAM', 'dram'] with actions idle, read, update, write, leak
+2025-04-04 16:49:42 INFO        Added estimator CactiSRAM that estimates ['SRAM', 'sram'] with actions idle, read, update, write, leak
+2025-04-04 16:49:42 INFO        Done loading Python plug-ins.
+2025-04-04 16:49:42 INFO        Found estimator plug-in: ADC Plug-In (<ADCEstimator.ADCEstimator object at 0x14d4f1fdfbb0>)
+2025-04-04 16:49:42 INFO        Found estimator plug-in: Aladdin_table (<AladdinTable.AladdinTable object at 0x14d4f1fdd060>)
+2025-04-04 16:49:42 INFO        Found estimator plug-in: Library (<LibraryEstimator.LibraryEstimator object at 0x14d4f1fdd360>)
+2025-04-04 16:49:42 INFO        Found estimator plug-in: DEPRECATED table-based-plug-ins. Use the Library plug-in instead. (<SetsOfTables.SetsOfTables object at 0x14d4f1ecb550>)
+2025-04-04 16:49:42 INFO        Found estimator plug-in: dummy (<DummyTable.DummyTable object at 0x14d4f1ecb370>)
+2025-04-04 16:49:42 INFO        Found estimator plug-in: CactiCache (<accelergy.plug_in_interface.estimator_wrapper.EstimatorWrapper object at 0x14d4f1ec8ee0>)
+2025-04-04 16:49:42 INFO        Found estimator plug-in: CactiDRAM (<accelergy.plug_in_interface.estimator_wrapper.EstimatorWrapper object at 0x14d4f1ecb4f0>)
+2025-04-04 16:49:42 INFO        Found estimator plug-in: CactiSRAM (<accelergy.plug_in_interface.estimator_wrapper.EstimatorWrapper object at 0x14d4f1ecbfd0>)
+2025-04-04 16:49:42 INFO        
+2025-04-04 16:49:42 INFO        ENERGY ESTIMATION for regfile(depth=128, width=8, datawidth=8, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).read(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-04-04 16:49:42 INFO        Aladdin_table estimated 0.83416p with accuracy 70%. 
+2025-04-04 16:49:42 INFO        
+2025-04-04 16:49:42 INFO        ENERGY ESTIMATION for regfile(depth=128, width=8, datawidth=8, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).update(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-04-04 16:49:42 INFO        Aladdin_table estimated 0.83416p with accuracy 70%. 
+2025-04-04 16:49:42 INFO        
+2025-04-04 16:49:42 INFO        ENERGY ESTIMATION for regfile(depth=128, width=8, datawidth=8, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).leak(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-04-04 16:49:42 INFO        Aladdin_table estimated 0.0007727999999999999p with accuracy 70%. Messages:
+2025-04-04 16:49:42 INFO        | Multiplying by n_instances 1
+2025-04-04 16:49:42 INFO        
+2025-04-04 16:49:42 INFO        ENERGY ESTIMATION for regfile(depth=128, width=8, datawidth=8, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).write(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-04-04 16:49:42 INFO        Aladdin_table estimated 0.83416p with accuracy 70%. 
+2025-04-04 16:49:42 INFO        
+2025-04-04 16:49:42 INFO        ENERGY ESTIMATION for intmac(width=8, has_power_gating=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).compute(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-04-04 16:49:42 INFO        Aladdin_table estimated 0.845p with accuracy 70%. 
+2025-04-04 16:49:42 WARNING     No action counts are specified as yaml input
+2025-04-04 16:49:42 INFO        
+2025-04-04 16:49:42 INFO        AREA ESTIMATION for regfile(depth=128, width=8, datawidth=8, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1)
+2025-04-04 16:49:42 INFO        Aladdin_table estimated 1965.98u^2 with accuracy 70%. Messages:
+2025-04-04 16:49:42 INFO        | Multiplying by n_instances 1
+2025-04-04 16:49:42 INFO        
+2025-04-04 16:49:42 INFO        AREA ESTIMATION for intmac(width=8, has_power_gating=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1)
+2025-04-04 16:49:42 INFO        Aladdin_table estimated 466.375u^2 with accuracy 70%. Messages:
+2025-04-04 16:49:42 INFO        | Multiplying by n_instances 1
+2025-04-04 16:49:42 INFO        flattened architecture is saved to:
+2025-04-04 16:49:42 INFO        ./timeloop-model.flattened_architecture.yaml
+2025-04-04 16:49:42 INFO        energy reference table is saved to:
+2025-04-04 16:49:42 INFO        ./timeloop-model.ERT.yaml
+2025-04-04 16:49:42 INFO        energy reference table summary is saved to:
+2025-04-04 16:49:42 INFO        ./timeloop-model.ERT_summary.yaml
+2025-04-04 16:49:42 WARNING     no runtime energy estimations are generated... not generating energy_estimation.yaml
+2025-04-04 16:49:42 INFO        area reference table is saved to:
+2025-04-04 16:49:42 INFO        ./timeloop-model.ART.yaml
+2025-04-04 16:49:42 INFO        area reference table summary is saved to:
+2025-04-04 16:49:42 INFO        ./timeloop-model.ART_summary.yaml
