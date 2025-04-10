@@ -27,7 +27,7 @@ This lab uses [Timeloop](https://github.com/NVlabs/timeloop) and [Accelergy](htt
 
 ### Why Apptainer?
 
-While Docker is commonly used to run containers and provides a stable environment, **Docker requires root (`sudo`) privileges**, which are not available on shared servers. To overcome this, we use **Apptainer** (formerly Singularity), which is designed for running containers in multi-user environments like HPC clusters **without needing `sudo`**.
+While Docker is commonly used to run containers and provides a stable environment, Docker requires root (`sudo`) privileges, which are not available on shared servers. To overcome this, we use Apptainer (formerly Singularity), which is designed for running containers in multi-user environments like HPC clusters without needing `sudo`.
 
 We will run this lab on the **Scholar server** (gpu.scholar.rcac.purdue.edu).
 
@@ -67,10 +67,10 @@ Here’s what each `--bind` flag does:
   Mounts your local `workspace/` folder (containing lab exercises) into the container so you can edit and run files inside the container environment.
 
 - `$(pwd)/timeloop_tmp/cacti_tmp` → `/usr/local/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs`:  
-  Provides a writable location for the **CACTI plugin**, which generates intermediate files during energy estimation.
+  Provides a writable location for the CACTI plugin, which generates intermediate files during energy estimation.
 
 - `$(pwd)/timeloop_tmp/neurosim_tmp` → `/usr/local/share/accelergy/estimation_plug_ins/accelergy-neurosim-plugin`:  
-  Provides a writable location for the **NeuroSim plugin**, required for analog/mixed-signal energy estimation.
+  Provides a writable location for the NeuroSim plugin, required for analog/mixed-signal energy estimation.
 
 These bindings are necessary because Apptainer containers are **read-only by default**. Mounting writable host directories allows the simulation tools to generate and store intermediate data and logs.
 
@@ -84,4 +84,22 @@ cd /home/workspace/
 
 This is where all the lab exercises are located. You can edit files, run Timeloop simulations, and explore results from this directory inside the container.
 
+---
+
+## Lab Overview
+
+In this lab, you will walk through **six hands-on exercises** designed to help you understand and explore accelerator simulation using Timeloop. Each exercise is located in its own directory within the `workspace/` folder and includes a clear objective and specific task.
+
+Please read the instructions provided in each exercise folder or its `README.md`, and complete the required steps. Some exercises may ask you to modify architecture files, experiment with mappings, or analyze simulation outputs such as performance or energy breakdowns.
+
+---
+
+## What to Submit
+
+You are required to submit a **maximum 3-page report** (PDF format) that includes the following:
+
+- Answers to specific questions posed in each exercise, including plots or tables summarizing the resultsi (where applicable).
+- Analysis and discussion of trends or trade-offs observed
+
+Keep your report concise and focused. Use visualizations and bullet points where appropriate.
 
