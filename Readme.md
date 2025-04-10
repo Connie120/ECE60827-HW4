@@ -92,7 +92,7 @@ Please read the instructions provided in each exercise folder or its `README.md`
 
 You are required to submit a **maximum 3-page report** (PDF format) that includes the following:
 
-- Answers to specific questions posed in each exercise, including plots or tables summarizing the resultsi (where applicable).
+- Answers to specific questions posed in each exercise, including plots or tables summarizing the results (where applicable).
 - Analysis and discussion of trends or trade-offs observed
 
 Keep your report concise and focused. Use visualizations and bullet points where appropriate.
