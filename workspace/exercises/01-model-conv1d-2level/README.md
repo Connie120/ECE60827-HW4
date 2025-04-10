@@ -25,7 +25,7 @@ We have provided a separate `.yaml` file for each of these inputs arranged into 
     python3 run_example.py 01_os
     ```
 
-3. Compare the statistics from the two runs. Do you see a difference? Why or why not? Do the access count and buffer utilization numbers match the expected numbers from the tables in the Powerpoint slides?
+3. Compare the statistics from the two runs. Do you see a difference? Why or why not?
 
 4. Now let's try something interesting. Edit the `prob/conv1d.prob.yaml` file and change the problem size from `P:16` to `P:1920`. Next, edit both mappings to reflect this change: a mapping _must_ cover the complete iteration space of the original problem, otherwise it is illegal (Timeloop will complain). Now try running both mappings as before.
     - Hmmmm... what do you think happened here? Can you change any of the _architecture_ specs to make the mappings work?

@@ -19,7 +19,7 @@ To run the exercise, type the following from the exercises/timeloop directory:
     python3 run_example.py 02_os_tiled
 ```
 
-4. Experiment with the following in your free lab time:
+4. Experiment with the following, plot and analyze your observations:
    - Tile shapes and sizes (by re-factoring `P` and `K` between Buffer and MainMemory).
    - Loop orders (by changing the permutation).
 
