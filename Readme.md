@@ -34,8 +34,6 @@ We will run this lab on the **Scholar server** (gpu.scholar.rcac.purdue.edu).
 
 This is the same server used for previous CUDA programming assignments.
 
----
-
 ### Step 1: Build the Container Image
 
 First, build the Apptainer container using the provided Docker image:
@@ -46,7 +44,6 @@ apptainer build timeloop.sif docker://timeloopaccelergy/accelergy-timeloop-infra
 
 This will create a local file called timeloop.sif, which is the container image you will use.
 
----
 
 ### Step 2: Start the Apptainer Interactive Shell
 
@@ -74,7 +71,6 @@ Here’s what each `--bind` flag does:
 
 These bindings are necessary because Apptainer containers are **read-only by default**. Mounting writable host directories allows the simulation tools to generate and store intermediate data and logs.
 
----
 
 Once inside the container shell, navigate to the mounted workspace to begin working:
 
@@ -84,15 +80,13 @@ cd /home/workspace/
 
 This is where all the lab exercises are located. You can edit files, run Timeloop simulations, and explore results from this directory inside the container.
 
----
 
-## Lab Overview
+## Lab Exercises
 
 In this lab, you will walk through **six hands-on exercises** designed to help you understand and explore accelerator simulation using Timeloop. Each exercise is located in its own directory within the `workspace/` folder and includes a clear objective and specific task.
 
 Please read the instructions provided in each exercise folder or its `README.md`, and complete the required steps. Some exercises may ask you to modify architecture files, experiment with mappings, or analyze simulation outputs such as performance or energy breakdowns.
 
----
 
 ## What to Submit
 
