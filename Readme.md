@@ -16,7 +16,72 @@ In this lab, you will go through **six structured exercises** designed to help y
 
 - Writing workload and architecture configuration files
 - Understanding how dataflows impact performance
-- Interpreting Timeloop’s output reports and visualizations
-- Exploring trade-offs in compute and memory usage
+- Interpreting Timeloop’s output reports
+- Exploring design trade-offs
 
 This practical experience is intended to deepen your understanding of accelerator simulation and help you think critically about efficient DNN hardware design.
+
+## Lab Environment Setup
+
+This lab uses [Timeloop](https://github.com/NVlabs/timeloop) and [Accelergy](https://github.com/Accelergy-Project/accelergy) for performance and energy simulation of DNN accelerators. These tools are packaged inside a container to ensure consistent environments across machines.
+
+### Why Apptainer?
+
+While Docker is commonly used to run containers and provides a stable environment, **Docker requires root (`sudo`) privileges**, which are not available on shared servers. To overcome this, we use **Apptainer** (formerly Singularity), which is designed for running containers in multi-user environments like HPC clusters **without needing `sudo`**.
+
+We will run this lab on the **Scholar server** (gpu.scholar.rcac.purdue.edu).
+
+
+This is the same server used for previous CUDA programming assignments.
+
+---
+
+### Step 1: Build the Container Image
+
+First, build the Apptainer container using the provided Docker image:
+
+```bash
+apptainer build timeloop.sif docker://timeloopaccelergy/accelergy-timeloop-infrastructure:latest
+```
+
+This will create a local file called timeloop.sif, which is the container image you will use.
+
+---
+
+### Step 2: Start the Apptainer Interactive Shell
+
+Use the following command to launch an interactive shell session inside the container:
+
+```bash
+apptainer shell \
+  --bind ./workspace/:/home/workspace/ \
+  --env LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH \
+  --bind $(pwd)/timeloop_tmp/cacti_tmp:/usr/local/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs \
+  --bind $(pwd)/timeloop_tmp/neurosim_tmp:/usr/local/share/accelergy/estimation_plug_ins/accelergy-neurosim-plugin \
+  timeloop.sif
+```
+
+Here’s what each `--bind` flag does:
+
+- `./workspace/` → `/home/workspace/`:  
+  Mounts your local `workspace/` folder (containing lab exercises) into the container so you can edit and run files inside the container environment.
+
+- `$(pwd)/timeloop_tmp/cacti_tmp` → `/usr/local/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs`:  
+  Provides a writable location for the **CACTI plugin**, which generates intermediate files during energy estimation.
+
+- `$(pwd)/timeloop_tmp/neurosim_tmp` → `/usr/local/share/accelergy/estimation_plug_ins/accelergy-neurosim-plugin`:  
+  Provides a writable location for the **NeuroSim plugin**, required for analog/mixed-signal energy estimation.
+
+These bindings are necessary because Apptainer containers are **read-only by default**. Mounting writable host directories allows the simulation tools to generate and store intermediate data and logs.
+
+---
+
+Once inside the container shell, navigate to the mounted workspace to begin working:
+
+```bash
+cd /home/workspace/
+```
+
+This is where all the lab exercises are located. You can edit files, run Timeloop simulations, and explore results from this directory inside the container.
+
+
