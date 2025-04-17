@@ -23,7 +23,7 @@ This practical experience is intended to deepen your understanding of accelerato
 
 ## Lab Environment Setup
 
-This lab uses [Timeloop](https://github.com/NVlabs/timeloop) and [Accelergy](https://github.com/Accelergy-Project/accelergy) for performance and energy simulation of DNN accelerators. These tools are packaged inside a container to ensure consistent environments across machines.
+This lab uses [Timeloop](https://github.com/NVlabs/timeloop) for performance simulation of DNN accelerators. These tools are packaged inside a container to ensure consistent environments across machines, and we will use Apptainer to run the Docker-based environment.
 
 ### Why Apptainer?
 
@@ -42,7 +42,7 @@ First, build the Apptainer container using the provided Docker image:
 apptainer build timeloop.sif docker://timeloopaccelergy/accelergy-timeloop-infrastructure:latest
 ```
 
-This will create a local file called timeloop.sif, which is the container image you will use.
+This will create a local file called timeloop.sif, which is the image you will use.
 
 
 ### Step 2: Start the Apptainer Interactive Shell
@@ -93,7 +93,7 @@ Please read the instructions provided in each exercise folder or its `README.md`
 You are required to submit a **maximum 3-page report** (PDF format) that includes the following:
 
 - Answers to specific questions posed in each exercise, including plots or tables summarizing the results (where applicable).
-- Analysis and discussion of trends or trade-offs observed
+- Analysis and discussion of trends or trade-offs observed.
 
 Keep your report concise and focused. Use visualizations and bullet points where appropriate.
 
